@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'dashboard/listings'
+  get 'dashboard/rentals'
+  get 'reviews/new'
+  get 'reviews/create'
+  get 'bookings/create'
+  get 'articles/index'
+  get 'articles/create'
+  get 'articles/new'
+  get 'articles/show'
   devise_for :users
   root to: 'pages#home'
   get 'articles', to: 'articles#index'

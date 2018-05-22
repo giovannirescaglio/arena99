@@ -19,5 +19,14 @@
       <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+       <% @reviews.each do |review|%>
+          <h2> review : <%= review.description %> <%= review.rating %></h2>
+      <% end %>
+      <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+    </div>
+  </div>
 </div>
 

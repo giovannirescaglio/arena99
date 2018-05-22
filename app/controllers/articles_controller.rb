@@ -29,6 +29,8 @@ class ArticlesController < ApplicationController
   def show
     authorize(@article)
     @booking = Booking.new
+    @reviews = @article.reviews
+
   end
 
 private

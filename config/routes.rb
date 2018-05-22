@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  get 'bookings/:id/reviews/new', to: 'reviews#new'
-  post 'reviews', to: 'reviews#create'
+  get 'bookings/:booking_id/reviews/new', to: 'reviews#new'
+  post 'bookings/:booking_id/reviews', to: 'reviews#create', as: :booking_reviews
   get 'dashboard/listings', to: 'dashboard#listings'
   get 'dashboard/rentals', to: 'dashboard#rentals'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

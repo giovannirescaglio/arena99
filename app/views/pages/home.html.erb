@@ -5,6 +5,16 @@
   <div class="banner-content">
     <h1>Welcome on Arena99</h1>
     <p>Find the best sport equipement</p>
+
+    <div class="search-btn">
+      <%= form_tag("/articles", method: "get") do %>
+        <%= label_tag(:q, "Where:") %>
+        <%= text_field_tag(:q) %>
+        <%= label_tag(:q, "Sports:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </div>
   </div>
 </div>
 

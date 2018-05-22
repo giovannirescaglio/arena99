@@ -1,3 +1,23 @@
-<h1>Articles#show</h1>
-<p> <%=  @article.name %> </p>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container">
+  <div>
+  <h1>Book <%=  @article.name %></h1>
+  <h1>Price <%=  @article.price %></h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_form_for [@article, @booking] do |f| %>
+        <%= f.input :start_date%>
+        <%= f.input :end_date%>
+        <%= f.input :price%>
+        <%= f.submit "Book now!", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    <h2> Offer Description: <%= @article.description%> </h2>
+      <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+    </div>
+  </div>
+</div>
+

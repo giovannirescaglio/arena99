@@ -1,2 +1,16 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<h1>Search results:</h1>
+
+<div class="container">
+  <div class="row">
+  <% @articles.each do |article| %>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <div class="article-card">
+        <h3><%= article.name %></h3>
+        <p><%= article.sport.name %></p>
+        <p><%= article.price %>€/day</p>
+        <div class="avatar"><%= article.user.profile_picture %></div>
+      </div>
+    </div>
+  <% end  %>
+</div>
+

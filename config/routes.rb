@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'articles', to: 'articles#index'
   post 'articles', to: 'articles#create'
   get 'articles/new', to: 'articles#new'
-  get 'articles/:id', to: 'articles#show'
+  get 'articles/:id', to: 'articles#show', as: "article"
   post 'bookings', to: 'bookings#create'
   get 'bookings/:id/reviews/new', to: 'reviews#new'
   post 'reviews', to: 'reviews#create'

@@ -9,9 +9,9 @@
     <div class="search-btn">
       <%= form_tag("/articles", method: "get") do %>
         <%= label_tag(:q, "Where:") %>
-        <%= text_field_tag(:q) %>
+        <%= text_field_tag(:localisation) %>
         <%= label_tag(:q, "Sports:") %>
-        <%= text_field_tag(:q) %>
+        <%= text_field_tag(:sport) %>
         <%= submit_tag("Search") %>
       <% end %>
     </div>

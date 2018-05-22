@@ -12,7 +12,6 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.references :sport, foreign_key: true
       t.references :state, foreign_key: true
       t.references :user, foreign_key: true
-
       t.timestamps
     end
   end

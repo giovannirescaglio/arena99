@@ -5,9 +5,11 @@
   <% @articles.each do |article| %>
     <div class="col-xs-12 col-md-6 col-lg-4">
       <div class="article-card">
+        <%= link_to article_path(article) do  %>
         <h3><%= article.name %></h3>
         <p><%= article.sport.name %></p>
         <p><%= article.price %>€/day</p>
+        <% end  %>
         <div class="avatar"><%= article.user.profile_picture %></div>
       </div>
     </div>

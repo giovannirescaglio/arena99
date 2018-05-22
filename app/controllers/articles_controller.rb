@@ -3,8 +3,11 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
+    @sports = Sport.all
+    @states = State.all
     @articles = policy_scope(Article)
-    @articles = @articles.where(sport_id: Sport.find_by_name((params[:sport])).id) if params[:sport].present?
+    @articles = @articles.where(sport: Sport.find_by_name((params[:sport]).capitalize)) if params[:sport].present?
+    @articles = @articles.where(state: State.find_by_description((params[:state]))) if params[:state].present?
   end
 
   def new

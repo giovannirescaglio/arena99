@@ -9,12 +9,14 @@ class ArticlesController < ApplicationController
     @sports = Sport.all
     @states = State.all
     @article = Article.new
+    authorize(@article)
   end
 
   def create
     @article = Article.new(article_params)
     @article.user = current_user
     @article.save!
+    authorize(@article)
   end
 
 

@@ -1,7 +1,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -11,12 +11,47 @@
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
+  color: white;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
 }
 .banner p {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
-  opacity: 0.6;
-  margin-bottom: 30px;
+  color: white;
+  margin-bottom: 45px;
+}
+
+.search-btn {
+  label {
+    color: white;
+  font-weight: lighter;
+}
+}
+
+#submit-btn {
+  background: #62E8A8;
+  color: white;
+  border: 1px solid #62E8A8;
+  border-radius: 3px;
+  padding: 2px 25px;
+  margin-left: 5px;
+
+}
+
+#arena99-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }

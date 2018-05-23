@@ -22,7 +22,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  padding: 30px 20px;
+  padding: 20px 20px;
   h3 {
     margin: 0;
     font-size: 16px;
@@ -38,6 +38,25 @@
     margin: 0;
     padding-left: 20px;
   }
+}
+
+.results {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  display: flex;
+}
+
+.cards-container {
+  padding: 10px;
+  margin: 0;
+  flex: 0 0 calc(100% - 450px);
+}
+
+#map {
+  position: sticky !important;
+  top: 0;
+  flex: 0 0 450px;
 }
 
 #title-and-avatar {

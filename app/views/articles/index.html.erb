@@ -1,24 +1,31 @@
 <h1>Search results:</h1>
 
-<div class="filters-bar">
-  <h3>Filter by: </h3>
-  <div id="search-by-sport">
-    <%= form_tag("/articles", method: "get") do %>
-        <%= label_tag(:q, "Sport:") %>
-        <%= select_tag(:sport, options_from_collection_for_select(@sports, :name, :name, params[:sport]),:include_blank => "All sports") %>
-        <%= label_tag(:q, "Condition:") %>
-        <%= select_tag(:state, options_from_collection_for_select(@states, :description, :description, params[:state]),:include_blank => "All conditions") %>
-        <%= label_tag(:q, "Max Price:") %>
-        <%= select_tag(:price, options_for_select([10,20,30,40,50,60,70,80,90,100,150,200], params[:price].to_i),:include_blank => "None") %>
-        <%= submit_tag("Filter") %>
-    <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="filters-bar">
+      <h3>Filter by: </h3>
+      <div id="search-by-sport">
+        <%= form_tag("/articles", method: "get") do %>
+            <%= label_tag(:q, "Sport:") %>
+            <%= select_tag(:sport, options_from_collection_for_select(@sports, :name, :name, params[:sport]),:include_blank => "All sports") %>
+            <%= label_tag(:q, "Condition:") %>
+            <%= select_tag(:state, options_from_collection_for_select(@states, :description, :description, params[:state]),:include_blank => "All conditions") %>
+            <%= label_tag(:q, "Max Price:") %>
+            <%= select_tag(:price, options_for_select([10,20,30,40,50,60,70,80,90,100,150,200], params[:price].to_i),:include_blank => "None") %>
+            <%= submit_tag("Filter") %>
+        <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
   <% @articles.each do |article| %>
-    <div class="col-xs-12 col-md-6 col-lg-4">
+    <div class="col-md-6 col-md-offset-3">
       <div class="article-card">
         <%= link_to article_path(article) do  %>
         <h3><%= article.name %></h3>
@@ -32,3 +39,10 @@
   <% end  %>
 </div>
 
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>

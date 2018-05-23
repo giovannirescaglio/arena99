@@ -5,10 +5,18 @@ class ArticlesController < ApplicationController
   def index
     @sports = Sport.all
     @states = State.all
-    @articles = policy_scope(Article)
+    @articles = policy_scope(Article).where.not(latitude: nil, longitude: nil)
     @articles = @articles.where(sport: Sport.find_by_name((params[:sport]).capitalize)) if params[:sport].present?
     @articles = @articles.where(state: State.find_by_description((params[:state]))) if params[:state].present?
     @articles = @articles.where("#{:price} <= #{params[:price]}") if params[:price].present?
+
+    @markers = @articles.map do |article|
+      {
+        lat: article.latitude,
+        lng: article.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/articles/map_box", locals: { article: article }) }
+      }
+    end
   end
 
   def new

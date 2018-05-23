@@ -28,10 +28,26 @@ class ArticlesController < ApplicationController
 
 
   def show
-    authorize(@article)
     @booking = Booking.new
     @reviews = @article.reviews
+    authorize(@article)
+  end
 
+  def edit
+    @sports = Sport.all
+    @states = State.all
+    authorize(@article)
+  end
+
+  def update
+    @article.update(article_params)
+    redirect_to article_path(@article.id)
+    authorize(@article)
+  end
+
+   def destroy
+    @article.destroy
+    redirect_to dashboard_listings_path
   end
 
 private

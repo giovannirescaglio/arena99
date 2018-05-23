@@ -186,7 +186,7 @@ kayaks_array = [
   price: 32,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "31 rue Bayard, 29900 Concarneau"
+  adress: "31 rue Bayard, 29900 Concarneau",
   user: User.first,
   },
   {name: "Sea Kayak" ,
@@ -197,7 +197,7 @@ kayaks_array = [
   price: 45,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "26 avenue de la Pointe du Cap Coz, 29940 Fouesnant"
+  adress: "26 avenue de la Pointe du Cap Coz, 29940 Fouesnant",
   user: User.first,
   },
   {name: "Inflatable Kayak" ,
@@ -208,7 +208,7 @@ kayaks_array = [
   price: 22,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "12 rue Beaurivage, 56260 Larmor-Plage"
+  adress: "12 rue Beaurivage, 56260 Larmor-Plage",
   user: User.first,
   },
   {name: "Kayak" ,
@@ -219,7 +219,7 @@ kayaks_array = [
   price: 34,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "17 avenue du Dr Fleming, 13500 Martigues"
+  adress: "17 avenue du Dr Fleming, 13500 Martigues",
   user: User.first,
   },
   {name: "Sea Kayak" ,
@@ -230,7 +230,7 @@ kayaks_array = [
   price: 30,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "21 rue Mires, 13002 Marseille"
+  adress: "21 rue Mires, 13002 Marseille",
   user: User.first,
   },
   {name: "Inflatable Kayak" ,
@@ -241,7 +241,7 @@ kayaks_array = [
   price: 25,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "16 rue Pascal, 13007 Marseille"
+  adress: "16 rue Pascal, 13007 Marseille",
   user: User.first,
   },
   {name: "Canoe Kayak" ,
@@ -252,7 +252,7 @@ kayaks_array = [
   price: 28,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "31 rue de Suez, 13007 Marseille"
+  adress: "31 rue de Suez, 13007 Marseille",
   user: User.first,
   },
   {name: "Canoe Kayak" ,
@@ -263,7 +263,7 @@ kayaks_array = [
   price: 19,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "11 rue Emile Rouviere, 13016 Marseille"
+  adress: "11 rue Emile Rouviere, 13016 Marseille",
   user: User.first,
   },
   {name: "Kayak" ,
@@ -274,7 +274,7 @@ kayaks_array = [
   price: 55,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "408 rue de Kersunez, 29760 Penmarch"
+  adress: "408 rue de Kersunez, 29760 Penmarch",
   user: User.first,
   },
   {name: "Sea Kayak" ,
@@ -285,7 +285,7 @@ kayaks_array = [
   price: 24,
   sport: Sport.find_by_name("Kayak"),
   state: states.sample,
-  adress: "33 rue Francois Guivarch, 29470 Plougastel-Daoulas"
+  adress: "33 rue Francois Guivarch, 29470 Plougastel-Daoulas",
   user: User.first,
   }
 ]

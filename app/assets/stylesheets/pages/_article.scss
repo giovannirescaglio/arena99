@@ -49,6 +49,8 @@
 
 .cards-container {
   padding: 10px;
+  margin: 0;
+  flex: 0 0 calc(100% - 450px);
 }
 
 #map {

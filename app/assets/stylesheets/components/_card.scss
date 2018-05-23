@@ -15,3 +15,23 @@
     padding: 10px;
   }
 }
+
+.article-card {
+  border: 2px solid #62E8A8;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  height: 220px;
+  h3 {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    border-bottom: 4px solid #62E8A8;
+  }
+  p {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    opacity: 0.9;
+  }
+}

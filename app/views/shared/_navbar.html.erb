@@ -1,18 +1,24 @@
-<div class="navbar-wagon">
+<div class="navbar-arena99">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <i class="fas fa-futbol"></i>
-  </a>
+  <div id="arena99-logo">
+    <%= image_tag "logo-arena99-white.png", {:style => "height:70px;"} %>
+    <p><%= link_to "Arena99", root_path %></p>
+  </div>
+  <div id="navbar-links">
+    <%= link_to "Add a new article |", new_article_path %>
+    <%= link_to " My Dashboard |", dashboard_listings_path %>
+    <%= link_to " Login", new_user_session_path %>
+  </div>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+<!--   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a> -->
 
     <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
+    <!-- <div class="navbar-wagon-item">
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -23,9 +29,9 @@
       </div>
     </div>
   </div>
-
+ -->
   <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <!-- <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -34,5 +40,5 @@
         <li><a href="#">Messagese</a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
 </div>

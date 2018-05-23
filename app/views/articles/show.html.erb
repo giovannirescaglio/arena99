@@ -24,7 +24,15 @@
       <p><strong>Condition: </strong><%=  @article.state.description %></p>
       <p><strong>Price: </strong><%=  @article.price %>€/day</p>
       <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %> <%= @article.user.last_name %></p>
-      <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>
+
+      <div class="btn-align">
+        <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>
+          <div class="delete-form">
+            <%= simple_form_for @article, method: :delete do |f| %>
+              <%= f.submit "delete your article", id: "delete-btn" %>
+            <% end %>
+          </div>
+      </div>
     </div>
 </div>
 <div class="reviews-footer">

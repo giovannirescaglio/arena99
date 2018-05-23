@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.save
     authorize(@booking)
+    redirect_to dashboard_rentals_path
   end
 
 private

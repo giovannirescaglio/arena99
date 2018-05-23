@@ -144,7 +144,7 @@ params_array = [
   picture: "https://pbs.twimg.com/profile_images/1362194980/ping-pong-paddle.jpg",
   price: 7,
   sport: Sport.find_by_name("Table tennis"),
-  state: states.sample,$
+  state: states.sample,
   address: " 20 Route de la Reposée, Fontainebleau",
   user: User.first,
   },

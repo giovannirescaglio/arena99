@@ -30,12 +30,31 @@
 }
 }
 
+.delete-form {
+  margin: 0;
+  padding: 0;
+
+}
+
 #submit-btn {
   background: #62E8A8;
   color: white;
   border: 1px solid #62E8A8;
   border-radius: 3px;
   padding: 2px 25px;
+  margin-left: 5px;
+}
+
+.btn-align {
+  display: flex;
+}
+
+#delete-btn {
+  background: #e8626a;
+  color: white;
+  border: 1px solid #e8626a;
+  border-radius: 3px;
+  padding: 2px 10px;
   margin-left: 5px;
 }
 

@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     @article.save!
     authorize(@article)
+    redirect_to dashboard_listings_path(@article)
   end
 
 

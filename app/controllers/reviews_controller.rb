@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
 
     if @review.save
-      redirect_to article_path(@booking.article)
+      redirect_to article_path(@article)
       authorize(@review)
     else
       render :new

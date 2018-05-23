@@ -174,3 +174,135 @@ params_array.each do |params|
   Article.create(params)
 end
 
+
+############ KAYAK seeds
+
+kayaks_array = [
+ {name: "Sea Kayak" ,
+  description: "Sea Kayak, one sit, securise for novice" ,
+  start_date: Date.new(2018, 2, 22),
+  end_date: Date.new(2019, 10, 10),
+  picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu4gVbxiUbqmmKJYeSwumwaWP-hLMEJcPH_DSkf6o7mrsAyetU" ,
+  price: 32,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "31 rue Bayard, 29900 Concarneau"
+  user: User.first,
+  },
+  {name: "Sea Kayak" ,
+  description: "Sea Kayak, two confortable sits, perfect to discover the sea environment" ,
+  start_date: Date.new(2018, 4, 20),
+  end_date: Date.new(2021, 11, 8),
+  picture: "https://www.canoe-shop.com/media/catalog/product/cache/19/image/9df78eab33525d08d6e5fb8d27136e95/k/a/kayak-biwok-evo-dag.jpg" ,
+  price: 45,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "26 avenue de la Pointe du Cap Coz, 29940 Fouesnant"
+  user: User.first,
+  },
+  {name: "Inflatable Kayak" ,
+  description: "Kayak for novice, with paddles and safety jacket" ,
+  start_date: Date.new(2018, 3, 18),
+  end_date: Date.new(2020, 12, 15),
+  picture: "https://cdn.shopify.com/s/files/1/0007/6968/7610/products/Ottawa_Kit_1.jpg?v=1522050517" ,
+  price: 22,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "12 rue Beaurivage, 56260 Larmor-Plage"
+  user: User.first,
+  },
+  {name: "Kayak" ,
+  description: "Kayak, two sits, paddles and safety jackets" ,
+  start_date: Date.today,
+  end_date: Date.new(2019, 8, 22),
+  picture: "https://images-na.ssl-images-amazon.com/images/I/61zHgOgaZ9L._SY355_.jpg?tag=iphoneafr-20" ,
+  price: 34,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "17 avenue du Dr Fleming, 13500 Martigues"
+  user: User.first,
+  },
+  {name: "Sea Kayak" ,
+  description: "Sea Kayak, one sit, paddles, safety jackets and waterproof compartment" ,
+  start_date: Date.today,
+  end_date: Date.new(2022, 4, 2),
+  picture: "http://www.swindonwatersports.co.uk/ekmps/shops/cameronsports1/images/perception-expression-11-touring-and-sea-kayak-[4]-3100-p.jpg" ,
+  price: 30,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "21 rue Mires, 13002 Marseille"
+  user: User.first,
+  },
+  {name: "Inflatable Kayak" ,
+  description: "Sea Kayak, two sits, paddles, safety jackets. Perfect for exploring the coast" ,
+  start_date: Date.today,
+  end_date: Date.new(2021, 5, 21),
+  picture: "https://i5.walmartimages.ca/images/Large/327/206/999999-69203886327206.jpg?odnBound=460" ,
+  price: 25,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "16 rue Pascal, 13007 Marseille"
+  user: User.first,
+  },
+  {name: "Canoe Kayak" ,
+  description: "Two sits, paddles, safety jackets and waterproof compartment. Perfect for novice or experimented person" ,
+  start_date: Date.today,
+  end_date: Date.new(2020, 2, 27),
+  picture: "https://www.loisirs3000.fr/media/catalog/product/cache/2/image/5e06319eda06f020e43594a9c230972d/k/a/kayak-dag-freeland-hi-luxe.jpg" ,
+  price: 28,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "31 rue de Suez, 13007 Marseille"
+  user: User.first,
+  },
+  {name: "Canoe Kayak" ,
+  description: "Two sits, paddles, safety jackets and waterproof compartment. Perfect for novice who want to have good trip" ,
+  start_date: Date.today,
+  end_date: Date.new(2025, 5, 31),
+  picture: "http://www.canoekayakdespontsdece.fr/s/cc_images/teaserbox_14776079.JPG?t=1503502410" ,
+  price: 19,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "11 rue Emile Rouviere, 13016 Marseille"
+  user: User.first,
+  },
+  {name: "Kayak" ,
+  description: "Two sits, ultra secure, waterproof compartment. Confirmed" ,
+  start_date: Date.today,
+  end_date: Date.new(2019, 6, 13),
+  picture: "http://www.kayak-attitude.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/o/a/oasistwin_rainbow_8.gif" ,
+  price: 55,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "408 rue de Kersunez, 29760 Penmarch"
+  user: User.first,
+  },
+  {name: "Sea Kayak" ,
+  description: "Two confortable sits. Perfect for kids or novice" ,
+  start_date: Date.today,
+  end_date: Date.new(2019, 6, 13),
+  picture: "https://images-na.ssl-images-amazon.com/images/I/71xuHbydkVL._SL1500_.jpg?tag=iphoneafr-20" ,
+  price: 24,
+  sport: Sport.find_by_name("Kayak"),
+  state: states.sample,
+  adress: "33 rue Francois Guivarch, 29470 Plougastel-Daoulas"
+  user: User.first,
+  }
+]
+
+  kayaks_array.each do |kayaks|
+    Article.create(kayaks)
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+

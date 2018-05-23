@@ -3,8 +3,12 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
+    @sports = Sport.all
+    @states = State.all
     @articles = policy_scope(Article)
-    @articles = @articles.where(sport_id: Sport.find_by_name((params[:sport])).id) if params[:sport].present?
+    @articles = @articles.where(sport: Sport.find_by_name((params[:sport]).capitalize)) if params[:sport].present?
+    @articles = @articles.where(state: State.find_by_description((params[:state]))) if params[:state].present?
+    @articles = @articles.where("#{:price} <= #{params[:price]}") if params[:price].present?
   end
 
   def new
@@ -25,6 +29,8 @@ class ArticlesController < ApplicationController
   def show
     authorize(@article)
     @booking = Booking.new
+    @reviews = @article.reviews
+
   end
 
 private

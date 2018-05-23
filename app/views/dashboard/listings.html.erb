@@ -1,2 +1,15 @@
-<h1>Dashboard#listings</h1>
-<p>Find me in app/views/dashboard/listings.html.erb</p>
+<div class="tabs">
+  <a class="tab active" href="#">
+    <h3>My listings</h3>
+  </a>
+  <a class="tab" href="#">
+    <h3>My rentals</h3>
+  </a>
+</div>
+
+<h1> My Listings: </h1>
+<% @articles.each do |article|%>
+      <p> name: <%= article.name %> </p>
+      <p> description: <%= article.description %> </p>
+<%end%>
+

@@ -8,8 +8,24 @@
 </div>
 
 <h1> My Listings: </h1>
-<% @articles.each do |article|%>
-      <p> name: <%= article.name %> </p>
-      <p> description: <%= article.description %> </p>
-<%end%>
+<div class="container">
+  <div class="row">
+    <% @articles.each do |article|%>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="article-listing-card" >
+          <%= link_to article_path(article) do  %>
+          <h3> name: <%= article.name %> </h3>
+          <p> description: <%= article.description %> </p>
+          <p> price: <%= article.price %> </p>
+          <p> start date: <%= article.start_date %> </p>
+          <p> end date: <%= article.end_date %> </p>
+          <p> category: <%= article.sport.name %> </p>
+          <p> state: <%= article.state.description %> </p>
+          <% end %>
+        </div>
+      </div>
+    <%end%>
+  </div>
 
+
+<%= link_to "Add a new article", "new_article_path", class: "btn btn-primary" %>

@@ -23,20 +23,37 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     @article.save!
     authorize(@article)
+    redirect_to dashboard_listings_path(@article)
   end
 
 
   def show
-    authorize(@article)
     @booking = Booking.new
     @reviews = @article.reviews
+    authorize(@article)
+  end
 
+  def edit
+    @sports = Sport.all
+    @states = State.all
+    authorize(@article)
+  end
+
+  def update
+    @article.update(article_params)
+    redirect_to article_path(@article.id)
+    authorize(@article)
+  end
+
+   def destroy
+    @article.destroy
+    redirect_to dashboard_listings_path
   end
 
 private
 
   def article_params
-    params.require(:article).permit(:sport_id, :state_id, :name, :description, :start_date, :end_date, :latitude, :longitude, :picture, :price)
+    params.require(:article).permit(:sport_id, :state_id, :name, :description, :start_date, :end_date, :address, :picture, :price)
   end
 
   def set_article

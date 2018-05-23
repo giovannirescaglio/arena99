@@ -2,44 +2,47 @@
 
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/featured/?sport');">
   <div class="banner-content">
-    <h1>Welcome on Arena99</h1>
-    <p>Find the best sport equipement</p>
+    <div id="arena99-banner">
+    <%= image_tag "logo-arena99-white.png", {:style => "height:150px;"} %>
+    <p><%= link_to "Arena99", root_path %></p>
+  </div>
+    <p>I got 99 problems but sports gear ain't one.</p>
 
     <div class="search-btn">
       <%= form_tag("/articles", method: "get") do %>
-        <%= label_tag(:q, "Where:") %>
+        <%= label_tag(:q, "Your destination:") %>
         <%= text_field_tag(:localisation) %>
-        <%= label_tag(:q, "Sports:") %>
+        <%= label_tag(:q, "...and Activity:") %>
         <%= text_field_tag(:sport) %>
-        <%= submit_tag("Search") %>
+        <%= submit_tag("GO!", id: "submit-btn") %>
       <% end %>
     </div>
   </div>
 </div>
 
 <div class="inspiration">
-  <h2>Inspiration</h2>
+  <h2>Find your next adventure</h2>
   <h3>Popular Sports</h3>
   <div class="container">
     <div class="row">
       <%= link_to articles_path(sport: "tennis") do %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lesportdauphinois.com/app/uploads/2016/06/Tennis_Racket_and_Balls.jpg');">TENNIS</div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lesportdauphinois.com/app/uploads/2016/06/Tennis_Racket_and_Balls.jpg');"><p>TENNIS</p></div>
         </div>
       <% end %>
       <%= link_to articles_path(sport: "football") do %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.lepoint.fr/images/2017/07/31/9620338lpw-9621536-article-football-jpg_4460375_660x281.jpg');">FOOTBALL</div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.lepoint.fr/images/2017/07/31/9620338lpw-9621536-article-football-jpg_4460375_660x281.jpg');"><p>FOOTBALL</p></div>
         </div>
       <% end %>
       <%= link_to articles_path(sport: "running") do %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.vichy-spa-hotel.fr/sites/www.vichy-spa-hotel.fr/files/cure-running-courir-spa-hotel-vichy.jpg');">RUNNING</div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.vichy-spa-hotel.fr/sites/www.vichy-spa-hotel.fr/files/cure-running-courir-spa-hotel-vichy.jpg');"><p>RUNNING</p></div>
         </div>
       <% end %>
       <%= link_to articles_path(sport: "swimming") do %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fwww.2Efemmeactuelle.2Efr.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Fbien-etre.2Fsport-fitness.2Ffiches-sports.2Fexercices-natation-pour-s-affiner-30690.2F14101028-1-fre-FR.2Fnatation-des-exercices-pour-s-affiner-de-partout.2Ejpg/748x372/quality/80/crop-from/center/natation-des-exercices-pour-s-affiner-de-partout.jpeg');">SWIMMING</div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fwww.2Efemmeactuelle.2Efr.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Fbien-etre.2Fsport-fitness.2Ffiches-sports.2Fexercices-natation-pour-s-affiner-30690.2F14101028-1-fre-FR.2Fnatation-des-exercices-pour-s-affiner-de-partout.2Ejpg/748x372/quality/80/crop-from/center/natation-des-exercices-pour-s-affiner-de-partout.jpeg');"><p>SWIMMING</p></div>
         </div>
       <% end %>
     </div>
@@ -48,23 +51,23 @@
   <div class="container">
     <div class="row">
       <%= link_to articles_path(city: "paris") do %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.ambassenparis.com/wp-content/uploads/2018/03/paris.jpg');">PARIS</div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.ambassenparis.com/wp-content/uploads/2018/03/paris.jpg');"><p>PARIS</p></div>
         </div>
       <% end %>
       <%= link_to articles_path(city: "lyon") do %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn-goeuro.com/static_content/web/content/destination/Lyon-header.jpg');">LYON</div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn-goeuro.com/static_content/web/content/destination/Lyon-header.jpg');"><p>LYON</p></div>
         </div>
       <% end %>
       <%= link_to articles_path(city: "marseille") do %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://i.f1g.fr/media/eidos/805x453_crop/2018/02/20/XVM094468d2-1596-11e8-b38a-0929f7da0ad0.jpg');">MARSEILLE</div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://i.f1g.fr/media/eidos/805x453_crop/2018/02/20/XVM094468d2-1596-11e8-b38a-0929f7da0ad0.jpg');"><p>MARSEILLE</p></div>
         </div>
       <% end %>
       <%= link_to articles_path(city: "lille") do %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.neoresid.com/wp-content/uploads/2018/04/lille.jpg');">LILLE</div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.neoresid.com/wp-content/uploads/2018/04/lille.jpg');"><p>LILLE</p></div>
         </div>
       <% end %>
     </div>

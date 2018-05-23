@@ -113,3 +113,18 @@
   font-size: 14px;
   font-style: italic;
 }
+
+.new-form {
+  margin-bottom: 70px;
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    border-bottom: 2px solid #62E8A8;
+    margin: 40px;
+    input {
+      align-items: center;
+    }
+  }
+}

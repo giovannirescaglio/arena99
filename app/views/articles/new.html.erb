@@ -1,19 +1,19 @@
-<div class="container">
+<div class="new-form">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h1>Add a new sports article !</h1>
-      <%= simple_form_for [@article] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :start_date%>
-        <%= f.input :end_date%>
-        <%= f.input :address%>
-        <%= f.input :picture%>
-        <%= f.input :price%>
-        <%= f.association :sport,:collection => @sports, include_blank: false%>
-        <%= f.association :state,:collection => @states, label_method: :description, include_blank: false %>
-        <%= f.submit "add an article", class: "btn btn-primary" %>
-      <% end %>
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h1>Share a new article in the Arena!</h1>
+        <%= simple_form_for [@article] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :start_date%>
+          <%= f.input :end_date%>
+          <%= f.input :address%>
+          <%= f.input :picture%>
+          <%= f.input :price%>
+          <%= f.association :sport,:collection => @sports, include_blank: false%>
+          <%= f.association :state,:collection => @states, label_method: :description, include_blank: false %>
+          <%= f.submit "GO!", id:"submit-btn" %>
+        <% end %>
     </div>
   </div>
 </div>

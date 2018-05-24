@@ -34,9 +34,22 @@ class ArticlesController < ApplicationController
     redirect_to dashboard_listings_path(@article)
   end
 
+  def dates_array(bookings)
+    array = []
+    bookings.each do |booking|
+      array << {from: booking.start_date.strftime("%Y-%m-%d"), to: booking.end_date.strftime("%Y-%m-%d")}
+    end
+    return array
+  end
 
   def show
     @booking = Booking.new
+    @bookings = Booking.all.where(article: Article.find(params[:id]))
+    if @bookings.empty? == false
+      @previousbookings = dates_array(@bookings)
+    else
+      @previousbookings = []
+    end
     @reviews = @article.reviews
     authorize(@article)
   end

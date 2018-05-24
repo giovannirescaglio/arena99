@@ -13,32 +13,25 @@
           <div class="row">
            <% @articles.each do |article|%>
              <div class="col-xs-12 col-md-6 col-lg-4">
-               <div class="article-listing-card" >
-                 <%= link_to article_path(article) do  %>
-                 <h3> name: <%= article.name %> </h3>
-                 <p> description: <%= article.description %> </p>
-                 <p> price: <%= article.price %> </p>
-                 <p> start date: <%= article.start_date %> </p>
-                 <p> end date: <%= article.end_date %> </p>
-                 <p> category: <%= article.sport.name %> </p>
-                 <p> state: <%= article.state.description %> </p>
-                 <% end %>
+               <div class="dashboard-listings-card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(<%= article.picture %>);">
+              <%= link_to article_path(article) do %>
+                 <h3> <%= article.name %> </h3>
+              <% end %>
+                 <p><i class="fas fa-edit"></i></p>
+                 <p><i class="fas fa-trash"></i></p>
                 </div>
-              </div>
-              <%end%>
+             </div>
+            <%end%>
           </div>
-          <%= link_to "Add a new article", new_article_path, class: "btn btn-primary" %>
-    </div>
-
-
-    </div>
+     </div>
+  </div>
 
     <div role="tabpanel" class="tab-pane" id="profile">
       <div class="container">
         <div class="row">
           <% @bookings.each do |booking|%>
             <div class="col-xs-12 col-md-6 col-lg-4">
-              <div class="article-listing-card" >
+              <div class="dashboard-rentals-card" >
                 <p> name: <%= booking.start_date %> </p>
                 <p> description: <%= booking.end_date %> </p>
                 <p> price: <%= booking.price %> </p>
@@ -47,9 +40,6 @@
           <%end%>
         </div>
       </div>
-
     </div>
-
   </div>
-
 </div>

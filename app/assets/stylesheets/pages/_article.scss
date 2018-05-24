@@ -77,6 +77,8 @@
 
 #show-details {
   position: absolute;
+  top: 250px;
+  right: 20px;
   margin: 30px;
   width: 50%;
   p {
@@ -91,22 +93,17 @@
 }
 
 #booking-form {
-  margin: 45px;
-  width: 300px;
-  position: absolute;
-  top: 170px;
-  right: 20px;
-  margin-left: 170px;
+  margin: 50px;
   border: 2px solid #62E8A8;
-  background: #62E8A8;
+  background: white;
   border-radius: 5px;
-  padding: 20px;
-  color: white;
+  padding: 50px;
+  color: #62E8A8;
   box-shadow: 1px 0px 5px -1px rgba(0,0,0,0.75);
   h3 {
     margin: 0;
     text-align: center;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #62E8A8;
     margin-bottom: 30px;
   }
   p {
@@ -125,17 +122,17 @@
 
 #total-price {
   p {
-  border: 1px solid white;
-  background: white;
-  color: #62E8A8;
+  border: 1px solid #62E8A8;
+  color: black;
   padding: 5px 15px;
   margin-top: 30px;
+  font-size: 20px;
 }
 }
 
 .grey-text {
   opacity: 0.8;
-  font-size: 14px;
+  font-size: 12px;
   font-style: italic;
 }
 

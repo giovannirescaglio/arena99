@@ -1,48 +1,46 @@
+<div class="container">
   <div class="show-title">
     <div id="title-and-avatar">
       <h1><%=  @article.name %></h1>
       <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
     </div>
   </div>
-<div id="details-booking">
-    <div id="show-picture">
-      <%= image_tag @article.picture, {:style => "width:500px;"} %>
-    </div>
-    <div id="booking-form">
-      <h3>Book now</h3>
-      <%= simple_form_for [@article, @booking] do |f| %>
-        <%= f.input :start_date%>
-        <%= f.input :end_date%>
-        <%= f.input :price%>
-        <%= f.submit "GO!", id: "submit-btn" %>
-      <% end %>
-    </div>
-    <div id="show-details">
-      <h3>Article details</h3>
-      <p><strong>Sport: </strong><%= @article.sport.name%></p>
-      <p><strong>Description: </strong><%= @article.description%></p>
-      <p><strong>Condition: </strong><%=  @article.state.description %></p>
-      <p><strong>Price: </strong><%=  @article.price %>€/day</p>
-      <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %> <%= @article.user.last_name %></p>
-
-      <div class="btn-align">
-        <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>
-          <div class="delete-form">
-            <%= simple_form_for @article, method: :delete do |f| %>
-              <%= f.submit "delete your article", id: "delete-btn" %>
-            <% end %>
-          </div>
+  <div id="details-booking">
+      <div id="show-picture">
+        <%= image_tag @article.picture, {:style => "width:500px;"} %>
       </div>
-    </div>
+        <% if policy(@article).edit? == false %>
+        <div id="booking-form">
+          <h3>Book now</h3>
+          <%= simple_form_for [@article, @booking] do |f| %>
+            <%= f.input :start_date%>
+            <%= f.input :end_date%>
+            <%= f.input :price%>
+            <%= f.submit "GO!", id: "submit-btn" %>
+          <% end %>
+      <% end %>
+      </div>
+      <div id="show-details">
+        <h3>Article details</h3>
+        <p><strong>Sport: </strong><%= @article.sport.name%></p>
+        <p><strong>Description: </strong><%= @article.description%></p>
+        <p><strong>Condition: </strong><%=  @article.state.description %></p>
+        <p><strong>Price: </strong><%=  @article.price %>€/day</p>
+        <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %> <%= @article.user.last_name %></p>
+
+        <div class="btn-align">
+          <% if policy(@article).edit? %>
+            <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>
+          <% end %>
+              <% if policy(@article).destroy? %>
+              <div class="delete-form">
+                <%= simple_form_for @article, method: :delete do |f| %>
+                  <%= f.submit "delete your article", id: "delete-btn" %>
+                <% end %>
+              <% end %>
+              </div>
+        </div>
+      </div>
+  </div>
 </div>
-<div class="reviews-footer">
-     <% @reviews.each do |review|%>
-        <h2> review : <%= review.description %> <%= review.rating %></h2>
-    <% end %>
-</div>
-
-
-
-
-
 

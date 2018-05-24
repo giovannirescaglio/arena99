@@ -1,13 +1,16 @@
+<div class="container">
   <div class="show-title">
     <div id="title-and-avatar">
       <h1><%=  @article.name %></h1>
       <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
     </div>
   </div>
+
 <div id="details-booking">
     <div id="show-picture">
       <%= image_tag @article.picture, {:style => "width:500px;"} %>
     </div>
+    <% if policy(@article).edit? == false %>
     <div id="booking-form">
       <h3>Instant Booking</h3>
         <%= simple_form_for [@article, @booking] do |f| %>
@@ -16,6 +19,7 @@
         <div id="total-price">
         </div>
         <%= f.submit "CONFIRM!", id: "submit-btn-white" %>
+      <% end %>
       <% end %>
     </div>
     <div id="show-details">
@@ -27,24 +31,18 @@
       <p id="price"><strong>Price: </strong><%=  @article.price %>€/day</p>
       <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %></p>
 
-      <div class="btn-align">
-        <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>
-          <div class="delete-form">
-            <%= simple_form_for @article, method: :delete do |f| %>
-              <%= f.submit "delete your article", id: "delete-btn" %>
-            <% end %>
-          </div>
+        <div class="btn-align">
+          <% if policy(@article).edit? %>
+            <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>
+          <% end %>
+              <% if policy(@article).destroy? %>
+              <div class="delete-form">
+                <%= simple_form_for @article, method: :delete do |f| %>
+                  <%= f.submit "delete your article", id: "delete-btn" %>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
       </div>
-    </div>
+  </div>
 </div>
-<div class="reviews-footer">
-     <% @reviews.each do |review|%>
-        <h2> review : <%= review.description %> <%= review.rating %></h2>
-    <% end %>
-</div>
-
-
-
-
-
-

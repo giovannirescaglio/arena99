@@ -5,9 +5,6 @@ class DashboardController < ApplicationController
     @articles = current_user.articles
     @bookings = current_user.bookings
   end
-
-  def rentals
-  end
 end
 
 

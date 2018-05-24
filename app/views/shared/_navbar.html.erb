@@ -7,7 +7,12 @@
   <div id="navbar-links">
     <%= link_to "Add a new article |", new_article_path %>
     <%= link_to " My Dashboard |", dashboard_listings_path %>
-    <%= link_to " Login", new_user_session_path %>
+    <% if !user_signed_in? %>
+    <%= link_to " Login |", new_user_session_path %>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= link_to " Logout", destroy_user_session_path, method: :delete %>
+    <% end %>
   </div>
 
   <!-- Right Navigation -->

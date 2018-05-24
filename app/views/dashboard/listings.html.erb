@@ -1,31 +1,55 @@
-<div class="tabs">
-  <a class="tab active" href="#">
-    <h3>My listings</h3>
-  </a>
-  <a class="tab" href="#">
-    <h3>My rentals</h3>
-  </a>
-</div>
+<div>
 
-<h1> My Listings: </h1>
-<div class="container">
-  <div class="row">
-    <% @articles.each do |article|%>
-      <div class="col-xs-12 col-md-6 col-lg-4">
-        <div class="article-listing-card" >
-          <%= link_to article_path(article) do  %>
-          <h3> name: <%= article.name %> </h3>
-          <p> description: <%= article.description %> </p>
-          <p> price: <%= article.price %> </p>
-          <p> start date: <%= article.start_date %> </p>
-          <p> end date: <%= article.end_date %> </p>
-          <p> category: <%= article.sport.name %> </p>
-          <p> state: <%= article.state.description %> </p>
-          <% end %>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li id="home-title" role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My listings</a></li>
+    <li id="profile-title" role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My rentals</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <div class="container">
+          <div class="row">
+           <% @articles.each do |article|%>
+             <div class="col-xs-12 col-md-6 col-lg-4">
+               <div class="article-listing-card" >
+                 <%= link_to article_path(article) do  %>
+                 <h3> name: <%= article.name %> </h3>
+                 <p> description: <%= article.description %> </p>
+                 <p> price: <%= article.price %> </p>
+                 <p> start date: <%= article.start_date %> </p>
+                 <p> end date: <%= article.end_date %> </p>
+                 <p> category: <%= article.sport.name %> </p>
+                 <p> state: <%= article.state.description %> </p>
+                 <% end %>
+                </div>
+              </div>
+              <%end%>
+          </div>
+          <%= link_to "Add a new article", new_article_path, class: "btn btn-primary" %>
+    </div>
+
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <div class="container">
+        <div class="row">
+          <% @bookings.each do |booking|%>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+              <div class="article-listing-card" >
+                <p> name: <%= booking.start_date %> </p>
+                <p> description: <%= booking.end_date %> </p>
+                <p> price: <%= booking.price %> </p>
+              </div>
+            </div>
+          <%end%>
         </div>
       </div>
-    <%end%>
+
+    </div>
+
   </div>
 
-
-<%= link_to "Add a new article", new_article_path, class: "btn btn-primary" %>
+</div>

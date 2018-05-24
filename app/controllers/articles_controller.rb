@@ -48,7 +48,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    raise
     @article.update(article_params)
     redirect_to article_path(@article.id)
     authorize(@article)

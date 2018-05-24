@@ -13,8 +13,8 @@ class ArticlesController < ApplicationController
     @markers = @articles.map do |article|
       {
         lat: article.latitude,
-        lng: article.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/articles/map_box", locals: { article: article }) }
+        lng: article.longitude,
+        infoWindow: { content: render_to_string(partial: "/articles/map_box", locals: { article: article }) }
       }
     end
   end

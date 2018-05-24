@@ -18,5 +18,5 @@ start_date_form.addEventListener("change", (event) => {
   var diffDays = Math.round(Math.abs((date_end.getTime() - date_start.getTime())/(oneDay))) + 1;
   console.log(diffDays);
   const item = `<p><strong>Total Price: ${diffDays * price}€</strong></p>`;
-  insert.insertAdjacentHTML("beforeend", item);
+  insert.innerHTML = item;
 });

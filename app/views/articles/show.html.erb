@@ -15,16 +15,17 @@
         <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", } %>
         <div id="total-price">
         </div>
-        <%= f.submit "GO!", id: "submit-btn" %>
+        <%= f.submit "CONFIRM!", id: "submit-btn-white" %>
       <% end %>
     </div>
     <div id="show-details">
       <h3>Article details</h3>
+      <p><strong>Article Reference: </strong><%= @article.id%></p>
       <p><strong>Sport: </strong><%= @article.sport.name%></p>
       <p><strong>Description: </strong><%= @article.description%></p>
       <p><strong>Condition: </strong><%=  @article.state.description %></p>
       <p id="price"><strong>Price: </strong><%=  @article.price %>€/day</p>
-      <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %> <%= @article.user.last_name %></p>
+      <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %></p>
 
       <div class="btn-align">
         <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>

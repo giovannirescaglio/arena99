@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
   def dates_array(bookings)
     array = []
     bookings.each do |booking|
-      array << {from: booking.start_date.strftime("%Y-%m-%d"), to: booking.end_date.strftime("%Y-%m-%d")}
+      array << {from: booking.start_date&.strftime("%Y-%m-%d"), to: booking.end_date&.strftime("%Y-%m-%d")}
     end
     return array
   end

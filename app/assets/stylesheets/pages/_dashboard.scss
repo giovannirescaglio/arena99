@@ -75,33 +75,29 @@
     color: #62e8a8;
   }
 
-#home-title-design{
-  color: #62E8A8;
+.tab{
+  color: black;
   font-size: 20px;
   opacity: 0.9;
-  border-bottom: 4px solid #62E8A8;
-
+  border-bottom: 4px solid white;
+  background: transparent;
 }
 
+.nav-tabs .active {
+   border-bottom: 4px solid #62E8A8;
+}
 .edit-icon-circle {
     position: relative;
     top: 55px;
-    left: 10px;
+    left: 0px;
     color: grey;
 }
 
  .edit-icon-circle:hover {
     text-decoration: none;
-    font-weight: bolder;
   }
 
-#profile-title-design {
-  color: #62E8A8;
-  font-size: 20px;
-  opacity: 0.9;
-  // border-bottom: 4px solid #62E8A8;
 
-}
 .dashboard-rentals-card{
   border: 1px solid grey;
   padding: 10px;
@@ -163,6 +159,7 @@
   padding-left: 10px;
   font-size: 13px;
   color: rgba(0,0,0,0.7);
+  width: 600px;
 
 }
 .message-body {

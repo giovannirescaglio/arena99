@@ -17,7 +17,7 @@
               <%= link_to article_path(article) do %>
                  <h3> <%= article.name %> </h3>
               <% end %>
-              <%= link_to article_path(article), class: "edit-icon" do %>
+              <%= link_to edit_article_path(article), class: "edit-icon" do %>
                  <i class="fas fa-edit"></i>
               <% end %>
               <%= link_to article_path(article), class: "trash-icon", method: :delete, data: {confirm:"Are you sure ?"} do %>
@@ -47,15 +47,16 @@
               <div class="message" >
                 <div class="message-name">
                   <h3><strong> Dates :</strong></h3>
-                  <p><%= booking.start_date %></p>
-                  <p><%= booking.end_date %></p>
+                  <p><%= booking.start_date%></p>
+                  <p><%= booking.end_date%></p>
+                  <p><%= booking.end_date%></p>
                 </div>
                 <div class="message-body">
                   <p><strong>Booking details</strong></p>
                   <p> your <%=booking.article.name%> is booked ! Enjoy</p>
                 </div>
                 <div class="message-status">
-                  <p class="price">€<%= booking.price %></p>
+                  <p class="price">€ <%= (01/02/2018 - 01/01/2018).to_i %></p>
                 </div>
               </div>
             </div>

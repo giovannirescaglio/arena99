@@ -13,8 +13,8 @@
           <%= form_tag("/articles", method: "get") do %>
             <%= text_field_tag(:localisation) %>
             <%= label_tag(:q, "&") %>
-            <%= text_field_tag(:sport, "Enter a sport") %>&nbsp
-            <%= submit_tag("LET'S GO!", id: "submit-btn-big", class:"hvr-grow") %>
+            <%= text_field_tag(:sport, nil, :placeholder => "Enter a sport" ) %>&nbsp
+            <%= submit_tag("LET'S GO!", id: "submit-btn", class:"hvr-grow") %>
           <% end %>
         </div>
     </div>

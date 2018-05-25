@@ -13,7 +13,7 @@
           <div class="row">
            <% @articles.each do |article|%>
              <div class="col-xs-12 col-md-6 col-lg-4">
-               <div class="dashboard-listings-card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(<%= article.picture %>);">
+               <div class="dashboard-listings-card animated pulse" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(<%= article.picture %>);">
               <%= link_to article_path(article) do %>
                  <h3> <%= article.name %> </h3>
               <% end %>
@@ -27,7 +27,7 @@
              </div>
             <%end%>
             <div class="col-xs-12 col-md-6 col-lg-4">
-              <div class="dashboard-add-card">
+              <div class="dashboard-add-card animated pulse">
                <%= link_to new_article_path, class: "edit-icon-circle" do %>
                <h3><i class="fas fa-plus"></i> Add a new article</h3>
                <% end %>
@@ -44,7 +44,7 @@
         <div class="row">
           <% @bookings.each do |booking|%>
             <div class="col-xs-12 col-md-12 col-lg-12">
-              <div class="message" >
+              <div class="message animated pulse" >
                 <div class="message-name">
                   <h3><strong> Dates :</strong></h3>
                   <p><%= booking.start_date%></p>

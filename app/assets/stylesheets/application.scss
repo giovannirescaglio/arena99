@@ -13,3 +13,16 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+
+#back-btn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: #62E8A8;
+padding: 10px 17px;
+color: black;
+border-radius: 50%;
+border: none;
+font-size: 24px;
+}

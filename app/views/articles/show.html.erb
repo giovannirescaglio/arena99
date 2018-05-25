@@ -3,36 +3,6 @@
     <h1><%=  @article.name %></h1>
     <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
   </div>
-</div>
-
-<div id="details-booking">
-  <div id="show-picture">
-    <%= image_tag @article.picture, {:style => "width:500px;"} %>
-  </div>
-  <div id="show-details">
-    <h3>Article details</h3>
-    <p><strong><i class="far fa-id-badge"></i> Article Reference: </strong><%= @article.id%></p>
-    <p><strong><i class="fas fa-basketball-ball"></i> Sport: </strong><%= @article.sport.name%></p>
-    <p><strong><i class="fas fa-info-circle"></i> Description: </strong><%= @article.description%></p>
-    <p><strong><i class="fas fa-check-circle"></i> Condition: </strong><%=  @article.state.description %></p>
-    <p><strong><i class="fas fa-hand-holding-usd"></i></i> Price: </strong><%=  @article.price %>€/day</p>
-    <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %></p>
-
-      <div class="btn-align">
-        <% if policy(@article).edit? %>
-          <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>
-        <% end %>
-            <% if policy(@article).destroy? %>
-            <div class="delete-form">
-              <%= simple_form_for @article, method: :delete do |f| %>
-                <%= f.submit "delete your article", id: "delete-btn" %>
-              <% end %>
-            <% end %>
-          </div>
-      </div>
-    </div>
-</div>
-
 <% if policy(@article).edit? == false %>
 <div id="booking-form">
   <h3>Instant Booking</h3>
@@ -41,7 +11,37 @@
     <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", } %>
     <div id="total-price">
     </div>
-    <%= f.submit "CONFIRM!", id: "submit-btn-white" %>
+    <%= f.submit "CONFIRM!", id: "submit-btn-white", class:"hvr-grow" %>
   <% end %>
 </div>
 <% end %>
+</div>
+
+<div id="details-booking">
+  <div id="show-picture">
+    <%= image_tag @article.picture, {:style => "width:500px;"} %>
+  </div>
+</div>
+
+<div id="show-details">
+  <h3>Article details</h3>
+  <p><strong><i class="far fa-id-badge"></i> Article Reference: </strong><%= @article.id%></p>
+  <p><strong><i class="fas fa-basketball-ball"></i> Sport: </strong><%= @article.sport.name%></p>
+  <p><strong><i class="fas fa-info-circle"></i> Description: </strong><%= @article.description%></p>
+  <p><strong><i class="fas fa-check-circle"></i> Condition: </strong><%=  @article.state.description %></p>
+  <p id="price-detail"><strong><i class="fas fa-hand-holding-usd"></i></i> Price: </strong><span><%=  @article.price %></span>€/day</p>
+  <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %></p>
+
+    <div class="btn-align">
+      <% if policy(@article).edit? %>
+        <%= link_to "edit your article", edit_article_path(@article.id), id:"submit-btn" %>
+      <% end %>
+          <% if policy(@article).destroy? %>
+          <div class="delete-form">
+            <%= simple_form_for @article, method: :delete do |f| %>
+              <%= f.submit "delete your article", id: "delete-btn" %>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+  </div>

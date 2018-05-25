@@ -76,11 +76,8 @@
 }
 
 #show-details {
-  position: absolute;
-  top: 200px;
-  right: 20px;
   margin: 30px;
-  width: 50%;
+  width: 60%;
   p {
     font-weight: lighter;
     font-size: 16px;
@@ -93,6 +90,9 @@
 }
 
 #booking-form {
+  position: absolute;
+  top: 80px;
+  right: 20px;
   margin: 50px;
   border: 2px solid #62E8A8;
   background: white;

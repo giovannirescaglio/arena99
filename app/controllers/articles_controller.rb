@@ -67,7 +67,6 @@ class ArticlesController < ApplicationController
   end
 
    def destroy
-    raise
     @article.destroy
     redirect_to dashboard_listings_path
     authorize(@article)

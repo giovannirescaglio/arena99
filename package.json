@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "animate.css": "^3.6.1",
+    "aos": "^2.3.0",
     "bootstrap": "3",
     "flatpickr": "^4.5.0",
     "gmaps": "^0.4.24",

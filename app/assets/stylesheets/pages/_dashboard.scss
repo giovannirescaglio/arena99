@@ -3,14 +3,41 @@
   border: 2px solid #62E8A8;
   padding: 10px;
   border-radius: 5px;
-  margin: 5px;
+  margin: 20px 10px;
   height: 220px;
   background-size: cover;
   h3 {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     border-bottom: 4px solid #62E8A8;
+  }
+  p {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    opacity: 0.9;
+  }
+}
+
+.row {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.dashboard-add-card{
+  border: 2px solid #62E8A8;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 10px;
+  height: 220px;
+  background-size: cover;
+  background-color: #B7F4D7;
+  h3 {
+    text-decoration: none;
+    color: dimgrey;
+    font-size: 30px;
+
   }
   p {
     text-decoration: none;
@@ -24,27 +51,74 @@
     text-decoration: none;
   }
 
-.fa-edit {
-    position: relative;
+.edit-icon {
+  position: relative;
+  top: 105px;
+  left: 280px;
+  color: white;
+}
+
+ .edit-icon:hover {
+    text-decoration: none;
+    color: #62e8a8;
+  }
+
+.trash-icon {
+  position: relative;
+  top: 106px;
+  left: 280px;
+  color: white;
+}
+
+.trash-icon:hover {
+    text-decoration: none;
+    color: #62e8a8;
+  }
+
+#home-title-design{
+  color: #62E8A8;
+  font-size: 20px;
+  opacity: 0.9;
+  border-bottom: 4px solid #62E8A8;
 
 }
 
+.edit-icon-circle {
+    position: relative;
+    top: 55px;
+    left: 10px;
+    color: grey;
+}
+
+ .edit-icon-circle:hover {
+    text-decoration: none;
+    font-weight: bolder;
+  }
+
+#profile-title-design {
+  color: #62E8A8;
+  font-size: 20px;
+  opacity: 0.9;
+  // border-bottom: 4px solid #62E8A8;
+
+}
 .dashboard-rentals-card{
-  border: 2px solid #62E8A8;
+  border: 1px solid grey;
   padding: 10px;
   border-radius: 5px;
   margin: 5px;
   height: 220px;
+  background-color: white;
   background-size: cover;
   h3 {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 20px;
     border-bottom: 4px solid #62E8A8;
   }
   p {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 16px;
     opacity: 0.9;
   }
@@ -53,3 +127,66 @@
   a:hover{
     text-decoration: none;
   }
+
+.fa-plus-circle {
+  font-size: 90px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+.message:last-child {
+  border-bottom: 1px solid #62E8A8;
+}
+.message-body {
+  flex-grow: 0;
+}
+.message-name {
+  padding-left: 10px;
+  min-width: 100px;
+}
+.message-name h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.message-name p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.message-body {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+
+}
+.message-body {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4);
+}
+.message-body strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+.message-body p {
+  margin: 15px 0;
+}
+.message-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: #04A366;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: lightgrey;
+}
+

@@ -14,8 +14,8 @@
     <p><strong><i class="far fa-id-badge"></i> Article Reference: </strong><%= @article.id%></p>
     <p><strong><i class="fas fa-basketball-ball"></i> Sport: </strong><%= @article.sport.name%></p>
     <p><strong><i class="fas fa-info-circle"></i> Description: </strong><%= @article.description%></p>
-    <p><strong><i class="fas fa-thermometer-three-quarters"></i> Condition: </strong><%=  @article.state.description %></p>
-    <p id="price"><strong><i class="fas fa-thermometer-three-quarters"></i> Price: </strong><%=  @article.price %>€/day</p>
+    <p><strong><i class="fas fa-check-circle"></i> Condition: </strong><%=  @article.state.description %></p>
+    <p><strong><i class="fas fa-hand-holding-usd"></i></i> Price: </strong><%=  @article.price %>€/day</p>
     <p class="grey-text">Posted on <%= @article.created_at %> by <%= @article.user.first_name %></p>
 
       <div class="btn-align">

@@ -5,16 +5,16 @@
       </div>
       <div class="banner-content">
         <div id="arena99-banner" class="pulse">
-          <%= image_tag "logo-arena99-white.png", {:style => "height:150px;"} %>
-          <p><%= link_to "Arena99", root_path %></p>
+          <%= image_tag "logo-arena99-white.png", {:style => "height:90px;"} %>
+          <p>&nbsp<%= link_to "Arena99", root_path %></p>
         </div>
         <p><i class="far fa-star"></i> I got 99 problems but sports gear ain't one. <i class="far fa-star"></i></p>
         <div class="search-btn">
           <%= form_tag("/articles", method: "get") do %>
-            <%= label_tag(:q, "Search a place") %>
             <%= text_field_tag(:localisation) %>
-            <%= label_tag(:q, "Search a practice") %>
-            <%= text_field_tag(:sport) %>
+            <%= label_tag(:q, "&") %>
+            <%= text_field_tag(:sport, "Enter a sport") %>
+            <%= label_tag(:q, ">") %>
             <%= submit_tag("LET'S GO!", id: "submit-btn") %>
           <% end %>
         </div>

@@ -4,7 +4,7 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/EykWcFEtFqo?autoplay=1&amp;mute=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;start=30" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <div class="banner-content">
-        <div id="arena99-banner" class="animated pulse">
+        <div id="arena99-banner" class="animated bounceInDown">
           <%= image_tag "logo-arena99-white.png", {:style => "height:90px;"} %>
           <p>&nbsp<%= link_to "Arena99", root_path %></p>
         </div>
@@ -14,7 +14,7 @@
             <%= text_field_tag(:localisation) %>
             <%= label_tag(:q, "&") %>
             <%= text_field_tag(:sport, nil, :placeholder => "Enter a sport" ) %>&nbsp
-            <%= submit_tag("LET'S GO!", id: "submit-btn", class:"hvr-grow") %>
+            <%= submit_tag("GO FOR IT!", id: "submit-btn", class:"hvr-grow") %>
           <% end %>
         </div>
     </div>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="inspiration">
-  <h2>Find your next adventure</h2>
+  <h2>Find your greatness, Explore the Arena</h2>
   <h3>Popular Sports</h3>
   <div class="container">
     <div class="row">
@@ -36,14 +36,14 @@
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.lepoint.fr/images/2017/07/31/9620338lpw-9621536-article-football-jpg_4460375_660x281.jpg');"><p>FOOTBALL</p></div>
         </div>
       <% end %>
-      <%= link_to articles_path(sport: "running") do %>
+      <%= link_to articles_path(sport: "surfing") do %>
         <div class="col-xs-12 col-lg-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.vichy-spa-hotel.fr/sites/www.vichy-spa-hotel.fr/files/cure-running-courir-spa-hotel-vichy.jpg');"><p>RUNNING</p></div>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.susantaks.nl/wp-content/uploads/2015/05/tumblr_n8si6mKqKY1th9nbmo6_1280.jpg');"><p>SURFING</p></div>
         </div>
       <% end %>
-      <%= link_to articles_path(sport: "swimming") do %>
+      <%= link_to articles_path(sport: "canyoning") do %>
         <div class="col-xs-12 col-lg-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fwww.2Efemmeactuelle.2Efr.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Fbien-etre.2Fsport-fitness.2Ffiches-sports.2Fexercices-natation-pour-s-affiner-30690.2F14101028-1-fre-FR.2Fnatation-des-exercices-pour-s-affiner-de-partout.2Ejpg/748x372/quality/80/crop-from/center/natation-des-exercices-pour-s-affiner-de-partout.jpeg');"><p>SWIMMING</p></div>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/s25282eadbc439890/image/i708c6119e4426c29/version/1497804718/image.jpg');"><p>CANYONING</p></div>
         </div>
       <% end %>
     </div>

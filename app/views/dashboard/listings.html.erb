@@ -2,8 +2,8 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li id="home-title" role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My listings</a></li>
-    <li id="profile-title" role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My rentals</a></li>
+    <li id="home-title" role="presentation" class="active"><a id="home-title-design"   href="#home" aria-controls="home" role="tab" data-toggle="tab">My listings</a></li>
+    <li id="profile-title" role="presentation"><a id="profile-title-design" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My bookings</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -17,24 +17,46 @@
               <%= link_to article_path(article) do %>
                  <h3> <%= article.name %> </h3>
               <% end %>
-                 <p><i class="fas fa-edit"></i></p>
-                 <p><i class="fas fa-trash"></i></p>
+              <%= link_to article_path(article), class: "edit-icon" do %>
+                 <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to article_path(article), class: "trash-icon", method: :delete, data: {confirm:"Are you sure ?"} do %>
+                 <i class="fas fa-trash"></i>
+              <% end %>
                 </div>
              </div>
             <%end%>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+              <div class="dashboard-add-card">
+               <%= link_to new_article_path, class: "edit-icon-circle" do %>
+               <h3><i class="fas fa-plus"></i> Add a new article</h3>
+               <% end %>
+              </div>
+            </div>
           </div>
-     </div>
-  </div>
+      </div>
+    </div>
 
     <div role="tabpanel" class="tab-pane" id="profile">
+
+
       <div class="container">
         <div class="row">
           <% @bookings.each do |booking|%>
-            <div class="col-xs-12 col-md-6 col-lg-4">
-              <div class="dashboard-rentals-card" >
-                <p> name: <%= booking.start_date %> </p>
-                <p> description: <%= booking.end_date %> </p>
-                <p> price: <%= booking.price %> </p>
+            <div class="col-xs-12 col-md-12 col-lg-12">
+              <div class="message" >
+                <div class="message-name">
+                  <h3><strong> Dates :</strong></h3>
+                  <p><%= booking.start_date %></p>
+                  <p><%= booking.end_date %></p>
+                </div>
+                <div class="message-body">
+                  <p><strong>Booking details</strong></p>
+                  <p> your <%=booking.article.name%> is booked ! Enjoy</p>
+                </div>
+                <div class="message-status">
+                  <p class="price">€<%= booking.price %></p>
+                </div>
               </div>
             </div>
           <%end%>

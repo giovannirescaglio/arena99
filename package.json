@@ -3,9 +3,11 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "animate.css": "^3.6.1",
     "bootstrap": "3",
     "flatpickr": "^4.5.0",
     "gmaps": "^0.4.24",
+    "hover.css": "^2.3.1",
     "jquery": "^3.3.1",
     "propellerkit-datetimepicker": "^1.2.0"
   },

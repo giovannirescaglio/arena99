@@ -15,7 +15,7 @@
           <%= f.input :price%>
           <%= f.association :sport,:collection => @sports, include_blank: false%>
           <%= f.association :state,:collection => @states, label_method: :description, include_blank: false %>
-          <%= f.submit "CONFIRM!", id:"submit-btn" %>
+          <%= f.submit "CONFIRM!", id:"submit-btn", class:"hvr-grow" %>
         <% end %>
     </div>
   </div>

@@ -12,7 +12,7 @@
           <%= select_tag(:state, options_from_collection_for_select(@states, :description, :description, params[:state]),:include_blank => "All conditions") %>
           <%= label_tag(:q, "Max Price:") %>
           <%= select_tag(:price, options_for_select([10,20,30,40,50,60,70,80,90,100,150,200], params[:price].to_i),:include_blank => "None") %>
-          <%= submit_tag("Filter", id:"submit-btn") %>
+          <%= submit_tag("Filter", id:"submit-btn", class:"hvr-grow") %>
       <% end %>
     </div>
   </div>
@@ -23,7 +23,7 @@
       <div class="row">
         <% @articles.each do |article| %>
           <div class="col-xs-12 col-lg-4">
-            <div class="article-card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(<%= article.picture %>);">
+            <div class="article-card animated slideInUp" data-aos="animation_name" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(<%= article.picture %>);">
               <%= link_to article_path(article) do  %>
               <h3><%= article.name %></h3>
               <p><%= article.sport.name %></p>

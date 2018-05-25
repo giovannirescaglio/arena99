@@ -15,7 +15,7 @@ User.destroy_all
 
 ############## SPORTS seeds
 
-sports_array = ["Paragliding", "Archery", "Badminton", "Baseball", "Table tennis", "Tennis", "Volleyball", "Basketball", "Netball", "Cricket", "Cheerleading", "Gymnastics", "Skateboarding", "Snowboarding", "Surfing", "Wakesurfing", "Kitesurfing", "Wakeboarding", "Paddleboarding", "Climbing", "Abseiling", "Canyoning", "Hiking", "Cycling", "Boxing", "Karate", "Taekwondo", "Fencing", "Judo", "Snooker", "Equitation", "Fishing", "Football", "Rugby", "Handball", "Golf", "Curling", "Ice Hockey", "Ice Dancing", "Biathlon", "Tennis", "Running", "Sailing", "Skiing", "Bobsleigh", "Polo", "Squash", "Canoeing", "Kayaking", "Rafting", "Rowing", "Water Polo", "Swimming", "Diving", "Crossfit", "Yoga", "Bodybuilding", "Kart racing", "Rally raid", "Road racing", "Motocross", "Petanque", "Quidditch"]
+sports_array = ["Paragliding", "Archery", "Badminton", "Baseball", "Table tennis", "Tennis", "Volleyball", "Basketball", "Netball", "Cricket", "Cheerleading", "Gymnastics", "Skateboarding", "Snowboarding", "Surfing", "Wakesurfing", "Kitesurfing", "Wakeboarding", "Paddleboarding", "Climbing", "Abseiling", "Canyoning", "Hiking", "Cycling", "Boxing", "Karate", "Taekwondo", "Fencing", "Judo", "Snooker", "Equitation", "Fishing", "Football", "Rugby", "Handball", "Golf", "Curling", "Ice Hockey", "Ice Dancing", "Biathlon", "Tennis", "Running", "Sailing", "Skiing", "Bobsleigh", "Polo", "Squash", "Canoeing", "Kayaking", "Rafting", "Rowing", "Water Polo", "Swimming", "Diving", "Crossfit", "Yoga", "Bodybuilding", "Kart racing", "Rally raid", "Road racing", "Motocross", "Petanque", "Quidditch"].sort
 
 sports_array.each do |sport|
   Sport.create(name: sport)
@@ -31,7 +31,15 @@ end
 
 ############## USER seeds
 
-test_user = User.create(email: "laumartin4@gmail.com", password: "123456")
+lolo = User.create(email: "laumartin4@gmail.com", password: "123456", first_name: "Lolo")
+giogio = User.create(email: "giogio@gmail.com", password: "123456", first_name: "Giogio")
+tony = User.create(email: "tony@gmail.com", password: "123456", first_name: "Tony")
+test1 = User.create(email: "test1@gmail.com", password: "123456", first_name: "Ramses")
+test2 = User.create(email: "test2@gmail.com", password: "123456", first_name: "Basile")
+test3 = User.create(email: "test3@gmail.com", password: "123456", first_name: "Floriane")
+test4 = User.create(email: "test4@gmail.com", password: "123456", first_name: "Ayoub")
+test5 = User.create(email: "test5@gmail.com", password: "123456", first_name: "Emna")
+test5 = User.create(email: "test5@gmail.com", password: "123456", first_name: "Yasmine")
 
 ############## ARTICLES seeds
 
@@ -159,27 +167,16 @@ params_array = [
   address: " 20 Route de la Reposée, Fontainebleau",
   user: User.first,
   },
-  {name: "Find your surfing board" ,
-  description: "Modern surfboards are made of polyurethane or polystyrene foam covered with layers of fiberglass, cloth and polyester or epoxy resin. The result is a light and strong surfboard that is buoyant and maneuverable.",
-  start_date: Date.today,
-  end_date: Date.new(2018, 10, 23),
-  picture: "http://www.konaboys.com/wp-content/uploads/2011/07/kona-surf-boards-for-sale.png",
-  price: 19,
-  sport: Sport.find_by_name("Surfing"),
-  state: states.sample,
-  address: " 1 Rue Jean Moulin, Thiers, Puy-de-Dôme",
-  user: User.first,
-  },
-  {name: "Tennis ball machine" ,
-  description: "Looking for some extra practice for that forehand or backhand stroke? Rent the ball machine at the front desk.",
+  {name: "Cage de foot" ,
+  description: "Cage de foot geniale, pour un moment au top avec tes potes",
   start_date: Date.today,
   end_date: Date.new(2020, 10, 23),
-  picture: "https://static1.squarespace.com/static/52d5c68de4b07924afaff92c/t/530d599fe4b0f561e850c512/1393383840206/ballmachine.jpg",
+  picture: "http://articles-foot.com/wp-content/uploads/2015/11/564684774742a.jpg",
   price: 18,
-  sport: Sport.find_by_name("Tennis"),
+  sport: Sport.find_by_name("Football"),
   state: states.sample,
-   address: " 10 Rue Léon Gambetta, Lille",
-  user: User.first,
+  address: " 16 villa gaudelet paris",
+  user: User.second,
   }
 ]
 
@@ -308,14 +305,140 @@ kayaks_array = [
   end
 
 
+############ SURF seeds
+
+surf_array = [
+ {name: "Amazing good as new surfboard" ,
+  description: "Tim Patterson Surfboards PB001-US020868: 6. Short Board Hand Shaped In France" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "https://img.grouponcdn.com/iam/fpGyga7LvTyrEjY851DL/sw-2048x1242/v1/c700x420.jpg" ,
+  price: 20,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "1 Avenue Edouard VII, 64200 Biarritz",
+  user: User.first,
+  },
+  {name: "Great beginner surfboard" ,
+  description: "Al Merrick Shapes Design Surfboard 6'1-6'2" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "https://dl16txa2az7pk.cloudfront.net/media/catalog/product/cache/1/thumbnail/745x419/9df78eab33525d08d6e5fb8d27136e95/8/7/87_745x419.jpg" ,
+  price: 17,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "Av. de Zurriola, 1, 20002 San Sebastián, Guipúzcoa, Spain",
+  user: User.first,
+  },
+  {name: "Brand new intermediate surfboard" ,
+  description: "Soft Top Surfboard Beach Surfing Ocean White Surf Board with Fins" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "https://dl16txa2az7pk.cloudfront.net/media/catalog/product/cache/1/thumbnail/745x419/9df78eab33525d08d6e5fb8d27136e95/8/7/87_745x419.jpg" ,
+  price: 18,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "Calle Joaquín Costa, 28, 39005 Santander, Cantabria, Spain",
+  user: User.first,
+  },
+  {name: "Awesome intermediate surfboard" ,
+  description: "Soft Top Amazing Board" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "http://surfnation.typepad.com/.a/6a00e553c82f3b883301b8d29b4b31970c-pi" ,
+  price: 10,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "Bohemia, 1, 33207 Gijón, Asturias, Spain",
+  user: User.first,
+  },
+  {name: "Best surfboard in Portugal" ,
+  description: "Hard Top Pro Surfboard" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "https://s-media-cache-ak0.pinimg.com/originals/25/e7/8a/25e78a53d5a0f4ee5c175282d90c3901.jpg" ,
+  price: 15,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "38.907106, -9.385306",
+  user: User.first,
+  },
+   {name: "Hard top 6 foot surfboard" ,
+  description: "New board amazing to ride on, customized" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "http://www.surfingsilvercoast.com/surfschool/Images/gallery/p&b/9.jpg" ,
+  price: 18,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "39.934709, -8.945457",
+  user: User.first,
+  },
+    {name: "Hard top 5.8 pro surfboard" ,
+  description: "For great surfers you will have amazing time" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "https://b9i191t9swmfpa7o1fi3farz-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/surf-camp-lagide-slide-show-4.jpg" ,
+  price: 20,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "40.891773, -8.667983",
+  user: User.first,
+  },
+   {name: "Soft top 6.5 beginner surfboard" ,
+  description: "For great surfers you will have amazing time" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "http://koholasurf.com/en/wp-content/uploads/2017/08/rip-curl-pro-peniche-2017.jpg" ,
+  price: 20,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "41.373044, -8.757257",
+  user: User.first,
+  },
+  {name: "Soft top 6.5 beginner surfboard" ,
+  description: "For great surfers you will have amazing time" ,
+  start_date: Date.new(2018, 05, 01),
+  end_date: Date.new(2019, 05, 01),
+  picture: "http://www.mango-surf.com/lib/image/photo/ricardo-christie-rip-pro-portugal-supertubos-peniche-7156-1.jpg" ,
+  price: 25,
+  sport: Sport.find_by_name("Surfing"),
+  state: states.sample,
+  address: "da vitoria, R. da Praia 20, Paredes da Vitória, Portugal",
+  user: User.first,
+  }
+]
+
+surf_array.each do |surf|
+  Article.create(surf)
+end
 
 
 
 
+############ BOOKING seeds
+booking_array = [
+{
+  start_date: Date.new(2018, 01, 01),
+  end_date: Date.new(2019, 02, 02),
+  article_id: 10,
+  user_id: 3
+},
+{
+  start_date: Date.new(2018, 02, 02),
+  end_date: Date.new(2019, 03, 03),
+  article_id: 10,
+  user_id: 5
+},
+{
+  start_date: Date.new(2018, 03, 03),
+  end_date: Date.new(2019, 04, 04),
+  article_id: 10,
+  user_id: 4
+},
+ ]
 
 
-
-
-
-
-
+booking_array.each do |booking|
+  Booking.create(booking)
+end
